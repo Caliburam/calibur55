@@ -1,9 +1,11 @@
+import GreetingSection from "@/components/dashboard/GreetingSection";
+import AvatarPlaceholder from "@/components/avatar/AvatarPlaceholder";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black flex items-center justify-center">
-      <h1 className="text-7xl font-bold text-green-500">
-        CALIBUR 55
-      </h1>
+    <main className="min-h-screen bg-slate-950 flex flex-col items-center justify-center gap-10">
+      <GreetingSection />
+      <AvatarPlaceholder />
     </main>
   );
 }
