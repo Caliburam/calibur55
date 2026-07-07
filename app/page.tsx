@@ -1,13 +1,19 @@
 import GreetingSection from "@/components/dashboard/GreetingSection";
-import AvatarPlaceholder from "@/components/avatar/AvatarPlaceholder";
-import RankBadge from "@/components/avatar/RankBadge";
+import AvatarPanel from "@/components/avatar/AvatarPanel";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 flex flex-col items-center justify-center gap-10">
+
       <GreetingSection />
-      <AvatarPlaceholder />
-      <RankBadge title="Iron Disciple" />
+
+      <AvatarPanel
+        rankTitle="Iron Disciple"
+        season="Season I"
+        currentDay={1}
+        totalDays={144}
+      />
+
     </main>
   );
 }
