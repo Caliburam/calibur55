@@ -13,9 +13,10 @@ export default function NicknamePage() {
   const [nickname, setNickname] = useState("");
 
   return (
-    <main className="min-h-screen bg-[#070B1A] flex items-center justify-center px-6">
+    <main className="min-h-screen flex items-center justify-center bg-[#070B1A] px-6">
       <OnboardingCard
-        step="Step 1 of 3"
+        currentStep={1}
+        totalSteps={3}
         title={
           <>
             Choose your

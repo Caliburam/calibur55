@@ -5,7 +5,6 @@ interface ProgressBarProps {
 export default function ProgressBar({
   progress,
 }: ProgressBarProps) {
-  // مطمئن می‌شیم همیشه بین 0 تا 100 باشه
   const safeProgress = Math.min(Math.max(progress, 0), 100);
 
   return (
