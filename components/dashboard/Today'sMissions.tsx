@@ -1,6 +1,17 @@
 import MissionGrid from "./MissionGrid";
+import { Mission } from "@/lib/missions";
 
-export default function TodaysMissions() {
+interface TodaysMissionsProps {
+  missions: Mission[];
+  onCompleteMission: (mission:Mission) => void;
+}
+
+export default function TodaysMissions({
+  missions,
+  onCompleteMission,
+}: TodaysMissionsProps) {
+  console.log("I AM THE NEW FILE");
+  console.log(missions);
   return (
     <section
       style={{
@@ -33,7 +44,10 @@ export default function TodaysMissions() {
         </div>
       </div>
 
-      <MissionGrid />
+      <MissionGrid
+        missions={missions}
+        onCompleteMission={onCompleteMission}
+      />
     </section>
   );
 }

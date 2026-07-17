@@ -1,29 +1,19 @@
 interface ProgressBarProps {
-  value: number;
-  max: number;
+  progress: number;
 }
 
 export default function ProgressBar({
-  value,
-  max,
+  progress,
 }: ProgressBarProps) {
-  const percentage = (value / max) * 100;
+  // مطمئن می‌شیم همیشه بین 0 تا 100 باشه
+  const safeProgress = Math.min(Math.max(progress, 0), 100);
 
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "14px",
-        background: "#1E293B",
-        borderRadius: "9999px",
-        overflow: "hidden",
-      }}
-    >
+    <div className="w-full h-2 overflow-hidden rounded-full bg-slate-800">
       <div
+        className="h-full rounded-full bg-blue-600 transition-all duration-500 ease-out"
         style={{
-          width: `${percentage}%`,
-          height: "100%",
-          background: "#2563EB",
+          width: `${safeProgress}%`,
         }}
       />
     </div>

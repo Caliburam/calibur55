@@ -1,7 +1,15 @@
 import MissionCard from "./MissionCard";
-import { missions } from "@/lib/missions";
+import { Mission } from "@/lib/missions";
 
-export default function MissionGrid() {
+interface MissionGridProps {
+  missions: Mission[];
+  onCompleteMission: (mission:Mission) => void;
+}
+
+export default function MissionGrid({
+  missions,
+  onCompleteMission,
+}: MissionGridProps) {
   return (
     <div
       style={{
@@ -17,6 +25,7 @@ export default function MissionGrid() {
           xp={mission.xp}
           duration={mission.duration}
           progress={mission.progress}
+          onComplete={() => onCompleteMission(mission)}
         />
       ))}
     </div>

@@ -1,33 +1,38 @@
-import { ReactNode } from "react";
-
-interface ButtonProps {
-  children: ReactNode;
+interface PrimaryButtonProps {
+  text: string;
   onClick?: () => void;
   disabled?: boolean;
 }
 
-export default function Button({
-  children,
+export default function PrimaryButton({
+  text,
   onClick,
-  disabled,
-}: ButtonProps) {
+  disabled = false,
+}: PrimaryButtonProps) {
   return (
     <button
       onClick={onClick}
       disabled={disabled}
-      style={{
-        background: disabled ? "#475569" : "#2563EB",
-        color: "white",
-        border: "none",
-        borderRadius: "12px",
-        padding: "14px 28px",
-        fontSize: "16px",
-        fontWeight: "bold",
-        cursor: disabled ? "not-allowed" : "pointer",
-        opacity: disabled ? 0.7 : 1,
-      }}
+      className="
+        w-full
+        rounded-xl
+        bg-blue-600
+        py-4
+        text-base
+        font-bold
+        text-white
+        transition-all
+        duration-300
+        hover:bg-blue-500
+        hover:shadow-lg
+        active:scale-[0.98]
+        disabled:cursor-not-allowed
+        disabled:bg-slate-700
+        disabled:text-slate-400
+        disabled:shadow-none
+      "
     >
-      {children}
+      {text}
     </button>
   );
 }

@@ -1,5 +1,5 @@
 import Card from "@/components/ui/Card";
-import Button from "@/components/ui/Button";
+import Button from "@/components/ui/PrimaryButton";
 import ProgressBar from "@/components/ui/ProgressBar";
 
 interface MissionCardProps {
@@ -7,6 +7,7 @@ interface MissionCardProps {
   xp: number;
   duration: number;
   progress: number;
+  onComplete: () => void;
 }
 
 export default function MissionCard({
@@ -14,6 +15,7 @@ export default function MissionCard({
   xp,
   duration,
   progress,
+  onComplete,
 }: MissionCardProps) {
   let buttonText = "Start Mission";
 
@@ -73,7 +75,10 @@ export default function MissionCard({
         {progress}% Complete
       </div>
 
-      <Button>
+      <Button
+        onClick={onComplete}
+        disabled={progress === 100}
+      >
         {buttonText}
       </Button>
 

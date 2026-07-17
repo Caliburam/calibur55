@@ -2,7 +2,15 @@ import LevelCard from "./LevelCard";
 import XPCard from "./XPCard";
 import StreakCard from "./StreakCard";
 
-export default function StatsRow() {
+interface StatsRowProps {
+  xp: number;
+  level: number;
+}
+
+export default function StatsRow({
+  xp,
+  level,
+}: StatsRowProps) {
   return (
     <div
       style={{
@@ -12,18 +20,14 @@ export default function StatsRow() {
       }}
     >
       <LevelCard
-        level={7}
-        currentXP={420}
+        level={level}
+        currentXP={xp}
         requiredXP={1000}
       />
 
-      <XPCard
-        todayXP={180}
-      />
+      <XPCard todayXP={180} />
 
-      <StreakCard
-        streak={12}
-      />
+      <StreakCard streak={12} />
     </div>
   );
 }

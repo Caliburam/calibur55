@@ -1,4 +1,7 @@
 import Card from "@/components/ui/Card";
+interface StatsRowProps {
+  xp: number;
+}
 
 interface StreakCardProps {
   streak: number;
