@@ -1,0 +1,28 @@
+Free
+
+✓ Dashboard
+✓ XP
+✓ Missions
+✓ Streak
+
+-------------
+
+Pro
+
+🧠 Mentor AI
+
+🧠 Weekly Review
+
+🧠 Personal Roadmap
+
+🧠 Dynamic Missions
+
+🧠 Burnout Detection
+
+🧠 Habit Prediction
+
+🧠 Focus Analysis
+
+🧠 Smart Notifications
+
+lib/migrateUser.ts می‌سازیم تا هر تغییری در ساختار KaizenUser به‌صورت خودکار اعمال بشه و هیچ‌وقت لازم نباشه کاربر اطلاعاتش رو پاک کنه

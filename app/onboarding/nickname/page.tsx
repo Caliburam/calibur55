@@ -3,6 +3,8 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
+import { updateNickname } from "@/lib/storage";
+
 import Input from "@/components/ui/Input";
 import PrimaryButton from "@/components/ui/PrimaryButton";
 import OnboardingCard from "@/components/ui/OnboardingCard";
@@ -37,7 +39,10 @@ export default function NicknamePage() {
           <PrimaryButton
             text="Next →"
             disabled={nickname.trim() === ""}
-            onClick={() => router.push("/onboarding/birthdate")}
+            onClick={() => {
+              updateNickname(nickname);
+              router.push("/onboarding/birthdate");
+            }}
           />
         </div>
       </OnboardingCard>

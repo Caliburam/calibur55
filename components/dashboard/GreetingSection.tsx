@@ -1,6 +1,12 @@
 import { getTimeBasedGreeting } from "@/lib/greeting";
 
-export default function GreetingSection() {
+interface GreetingSectionProps {
+  nickname: string;
+}
+
+export default function GreetingSection({
+  nickname,
+}: GreetingSectionProps) {
   const greeting = getTimeBasedGreeting();
 
   return (
@@ -10,7 +16,7 @@ export default function GreetingSection() {
       </p>
 
       <h1 className="mt-2 text-5xl font-bold text-white">
-        CALIBUR
+        {nickname}
       </h1>
     </section>
   );
