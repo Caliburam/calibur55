@@ -12,16 +12,20 @@ export default function MissionGrid({
 }: MissionGridProps) {
   return (
     <div
-      style={{
-        width: "100%",
-        display: "grid",
-        gap: "20px",
-      }}
+      className="
+      w-full
+      grid
+      grid-cols-1
+      md:grid-cols-2
+      xl:grid-cols-3
+      gap-5
+    "
     >
       {missions.map((mission) => (
         <MissionCard
           key={mission.title}
           title={mission.title}
+          category={mission.category}
           xp={mission.xp}
           duration={mission.duration}
           progress={mission.progress}

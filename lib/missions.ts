@@ -1,5 +1,11 @@
 export interface Mission {
   title: string;
+
+  category: {
+    name: string;
+    icon: string;
+  };
+
   xp: number;
   duration: number;
   progress: number;
@@ -8,6 +14,10 @@ export interface Mission {
 export const missions: Mission[] = [
   {
     title: "Exercise",
+    category: {
+      name: "Fitness",
+      icon: "🏋️",
+    },
     xp: 150,
     duration: 45,
     progress: 0,
@@ -15,6 +25,10 @@ export const missions: Mission[] = [
 
   {
     title: "Spanish",
+    category: {
+      name: "Language",
+      icon: "🇪🇸",
+    },
     xp: 80,
     duration: 30,
     progress: 20,
@@ -22,6 +36,10 @@ export const missions: Mission[] = [
 
   {
     title: "AI Laboratory",
+    category: {
+      name: "Coding",
+      icon: "💻",
+    },
     xp: 250,
     duration: 90,
     progress: 60,
@@ -29,6 +47,10 @@ export const missions: Mission[] = [
 
   {
     title: "Reading",
+    category: {
+      name: "Mind",
+      icon: "📖",
+    },
     xp: 60,
     duration: 20,
     progress: 15,
@@ -36,6 +58,10 @@ export const missions: Mission[] = [
 
   {
     title: "Creator Studio",
+    category: {
+      name: "Creative",
+      icon: "🎨",
+    },
     xp: 200,
     duration: 75,
     progress: 0,
@@ -43,6 +69,10 @@ export const missions: Mission[] = [
 
   {
     title: "Recovery",
+    category: {
+      name: "Recovery",
+      icon: "🛌",
+    },
     xp: 40,
     duration: 15,
     progress: 100,

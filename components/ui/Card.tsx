@@ -9,14 +9,26 @@ export default function Card({
 }: CardProps) {
   return (
     <div
-      style={{
-        background: "#1E293B",
-        border: "1px solid rgba(255,255,255,.08)",
-        borderRadius: "18px",
-        padding: "24px",
-        width: "100%",
-        boxSizing: "border-box",
-      }}
+      className="
+        group
+        w-full
+        box-border
+        rounded-3xl
+        border
+        border-white/10
+        bg-slate-800
+        p-6
+
+        transition-all
+        duration-300
+        ease-out
+
+        hover:-translate-y-1
+        hover:scale-[1.015]
+        hover:border-blue-500/40
+        hover:shadow-2xl
+        hover:shadow-blue-500/10
+      "
     >
       {children}
     </div>
