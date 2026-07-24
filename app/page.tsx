@@ -1,10 +1,13 @@
 "use client";
 
-import GreetingSection from "@/components/dashboard/GreetingSection";
-import AvatarPanel from "@/components/avatar/AvatarPanel";
-import StatsRow from "@/components/dashboard/StatsRow";
+import { useState } from "react";
+
+import DashboardHero from "@/components/dashboard/DashboardHero";
+import DailyQuoteCard from "@/components/dashboard/DailyQuoteCard";
 import TodaysMissions from "@/components/dashboard/Today'sMissions";
-import ActionPanel from "@/components/dashboard/ActionPanel";
+import DailyRewardModal from "@/components/dashboard/DailyRewardModal";
+
+import { quotes } from "@/data/quotes";
 
 import { useProgression } from "@/hooks/useProgression";
 import { useUser } from "@/hooks/useUser";
@@ -15,14 +18,19 @@ export default function Home() {
     loading,
     updateUser,
   } = useUser();
+  const [showReward, setShowReward] = useState(true);
 
-  if (loading) return null;
+  if (loading || !user) return null;
+  
+  const currentUser = user;
 
-  const currentUser = user!;
+  
+
+  const dailyQuote =
+    quotes[new Date().getDate() % quotes.length];
 
   const {
     gainXP,
-    loseXP,
     completeMission,
   } = useProgression(currentUser, updateUser);
 
@@ -47,25 +55,15 @@ export default function Home() {
           gap-8
         "
       >
-        <GreetingSection
+        <DashboardHero
           nickname={currentUser.profile.nickname}
-        />
-
-        <AvatarPanel
-          rankTitle="Iron Disciple"
-          season="Season I"
-          currentDay={1}
-          totalDays={144}
-        />
-
-        <StatsRow
-          xp={currentUser.progression.xp}
           level={currentUser.progression.level}
+          xp={currentUser.progression.xp}
+          streak={currentUser.progression.streak}
         />
 
-        <ActionPanel
-          onGainXP={() => gainXP(50)}
-          onLoseXP={() => loseXP(50)}
+        <DailyQuoteCard
+          quote={dailyQuote}
         />
 
         <TodaysMissions
@@ -73,6 +71,16 @@ export default function Home() {
           onCompleteMission={completeMission}
         />
       </div>
+
+      {showReward && (
+        <DailyRewardModal
+          onClaim={() => {
+            gainXP(50);
+            setShowReward(false);
+          }}
+        />
+      )}
+
     </main>
   );
 }

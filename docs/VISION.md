@@ -66,3 +66,31 @@ Help millions of people become 1% better every day.
 - Daily Reward
 - Chest Reward
 - Sound Effects
+
+✨ Semi Cartoon Assets
+🎵 SFX
+🔥 Micro Animations
+📦 Chest Opening
+🌸 Floating Particles
+💙 Premium Illustrations
+🥷 Avatar System
+
+## Calibur Visual Language
+
+- Semi Cartoon
+- Transparent Assets
+- Soft Lighting
+- Blue Accent
+- RPG Feeling
+- Zen Minimalism
+The interface should always feel calm,
+premium, and game-like.
+
+Every screen should make the user
+want to stay longer.
+Calibur isn't about completing tasks.
+
+It's about becoming someone you're proud of.
+
+Reward every effort. Celebrate every milestone. Never fake progress.
+Every interaction should feel rewarding.
